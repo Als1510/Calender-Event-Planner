@@ -22,7 +22,7 @@ export class AddAppointmentDialogComponent {
     this.appointmentForm = this.fb.group({
       title: [data?.appointment?.title || '', Validators.required],
       date: [data?.date || data || '', Validators.required],
-      time: [data?.appointment?.time || '']
+      time: [data?.appointment?.time || '', Validators.required]
     });
   }
 
