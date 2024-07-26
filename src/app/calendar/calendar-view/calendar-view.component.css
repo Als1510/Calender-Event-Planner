@@ -1,0 +1,102 @@
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+}
+
+mat-toolbar {
+  background: #3f51b5;
+  color: white;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1px;
+}
+
+.calendar-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+  position: relative;
+  cursor: pointer;
+  min-height: 80px;
+  cursor: auto;
+}
+
+.day-number {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.appointment-content {
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  margin: 5px 0;
+  width: 100%;
+}
+
+.appointment {
+  margin: 5px 0;
+  color: white;
+  padding: 4px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.appointment mat-icon {
+  position: absolute;
+  cursor: move;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 20px !important;
+}
+
+.event-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.event-block span {
+  width: 100px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dragging {
+  opacity: 0.5;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}

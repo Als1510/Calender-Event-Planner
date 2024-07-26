@@ -1,0 +1,29 @@
+mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+h2 {
+  margin: 0;
+}
+
+mat-icon {
+  cursor: pointer;
+}

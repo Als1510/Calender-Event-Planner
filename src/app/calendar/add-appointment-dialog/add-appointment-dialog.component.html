@@ -1,0 +1,31 @@
+<div class="header">
+  <h2>{{ isEditing ? 'Edit Appointment' : 'Add Appointment' }}</h2>
+  <mat-icon *ngIf="isEditing" (click)="deleteAppointment()">delete_outline</mat-icon>
+</div>
+<div mat-dialog-content>
+  <form [formGroup]="appointmentForm">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title">
+      <mat-error *ngIf="appointmentForm.controls['title'].hasError('required')">Title is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="date" [value]="data?.date | date: 'yyyy-MM-dd'">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="appointmentForm.controls['date'].hasError('required')">Date is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Time</mat-label>
+      <input matInput formControlName="time" type="time">
+      <mat-error *ngIf="appointmentForm.controls['time'].hasError('required')">Time is required</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button (click)="onSave()">Save</button>
+</div>
